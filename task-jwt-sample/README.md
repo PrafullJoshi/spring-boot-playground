@@ -1,5 +1,5 @@
 # Step 1
-## Create sample REST COntroller with Storage APIs for Tasks
+## Create sample REST Controller with Storage APIs for Tasks
 No Dependency on Security needed for now.
 On Root folder execute following command to start the server
 ```sh
@@ -33,4 +33,14 @@ GET Task with id 1
 curl http://localhost:8080/tasks/1
 
 Response - {"id":1,"description":"Buy some milk(shake)"}
+```
+
+## Now add User Authorization/Authentication
+
+Add dependency
+```xml
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 ```
