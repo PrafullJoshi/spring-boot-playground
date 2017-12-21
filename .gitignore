@@ -6,9 +6,12 @@ RemoteSystemsTempFiles/
 das-boot/target/*
 das-boot/.classpath
 das-boot/.project
+das-boot/.settings/*
 
 fruitbasket/*
 
 task-jwt-sample/target/*
-das-boot/.settings/*
+task-jwt-sample/.settings/*
+task-jwt-sample/.classpath
+task-jwt-sample/.project
 
