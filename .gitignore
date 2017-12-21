@@ -5,4 +5,5 @@ RemoteSystemsTempFiles/
 das-boot/target/*
 fruitbasket/*
 task-jwt-sample/target/*
+das-boot/.settings/*
 
