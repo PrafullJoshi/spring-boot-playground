@@ -2,8 +2,13 @@
 .metadata/
 .recommenders/
 RemoteSystemsTempFiles/
+
 das-boot/target/*
+das-boot/.classpath
+das-boot/.project
+
 fruitbasket/*
+
 task-jwt-sample/target/*
 das-boot/.settings/*
 
