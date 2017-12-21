@@ -1,1 +1,8 @@
 .DS_Store
+.metadata/
+.recommenders/
+RemoteSystemsTempFiles/
+das-boot/target/*
+fruitbasket/*
+task-jwt-sample/target/*
+
