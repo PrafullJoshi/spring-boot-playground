@@ -1,4 +1,4 @@
-package com.lonelybit.task.model;
+package com.lonelybit.authapi.task.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.lonelybit.task.security;
+package com.lonelybit.authapi.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -12,7 +12,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -21,12 +20,15 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lonelybit.user.ApplicationUser;
+import com.lonelybit.authapi.user.ApplicationUser;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-	@Autowired
-	AuthenticationManager authenticationManager;
+	private AuthenticationManager authenticationManager;
+
+	public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
+		this.authenticationManager = authenticationManager;
+	}
 
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request,

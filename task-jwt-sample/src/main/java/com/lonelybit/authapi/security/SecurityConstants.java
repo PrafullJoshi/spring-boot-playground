@@ -1,4 +1,4 @@
-package com.lonelybit.task.security;
+package com.lonelybit.authapi.security;
 
 public class SecurityConstants {
 	public static final String SECRET = "SecretKeyToGenJWTs";

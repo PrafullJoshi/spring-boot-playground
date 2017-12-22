@@ -1,4 +1,4 @@
-package com.lonelybit.task.controller;
+package com.lonelybit.authapi.task.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lonelybit.task.model.Task;
-import com.lonelybit.task.repository.TaskRepository;
+import com.lonelybit.authapi.task.model.Task;
+import com.lonelybit.authapi.task.repository.TaskRepository;
 
 @RestController
 @RequestMapping("/tasks")
