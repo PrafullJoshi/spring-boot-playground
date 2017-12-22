@@ -43,4 +43,44 @@ Add dependency
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
+		<dependency>
+		    <groupId>io.jsonwebtoken</groupId>
+		    <artifactId>jjwt</artifactId>
+		    <version>0.7.0</version>
+		</dependency>
 ```
+
+### Testing with Authentication and Authorization
+
+Unauthenticated Request
+```sh
+curl http://localhost:8080/tasks
+
+Result - {"timestamp":1513902888852,"status":403,"error":"Forbidden","message":"Access Denied","path":"/tasks"} 
+```
+
+New User Registration
+```sh
+curl -H "Content-Type: application/json" -X POST -d '{"username":"prafull", "password":"password"}' http://localhost:8080/users/sign-up
+
+Result - 200 OK 
+```
+
+Login with New User now
+```sh
+curl -i -H "Content-Type: application/json" -X POST -d '{"username":"prafull", "password":"password"}' http://localhost:8080/login
+
+Result - 200 OK 
+ALong with a Response Header 
+Authorization → Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcmFmdWxsIiwiZXhwIjoxNTE0NzY3NzYwfQ.NfeBTIqz8BYo0pxCtk1QceSzR9Gl3iMNKi3ZShXjCm5Sj-8Q7SNn88phmZUiSpqaR9dWOfoMDoKTCSJZXTU5LA
+```
+
+Issue Get call with Authorization Header now -
+```sh
+curl -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcmFmdWxsIiwiZXhwIjoxNTE0NzY3NzYwfQ.NfeBTIqz8BYo0pxCtk1QceSzR9Gl3iMNKi3ZShXjCm5Sj-8Q7SNn88phmZUiSpqaR9dWOfoMDoKTCSJZXTU5LA" -X POST -d '{"description": "Buy watermelon"}'  http://localhost:8080/tasks
+
+Result - 200 OK, Description for the task is inserted now.
+```
+
