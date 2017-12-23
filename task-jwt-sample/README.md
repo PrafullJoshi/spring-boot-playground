@@ -84,3 +84,5 @@ curl -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIU
 Result - 200 OK, Description for the task is inserted now.
 ```
 
+### Reference
+https://dzone.com/articles/implementing-jwt-authentication-on-spring-boot-api[https://dzone.com/articles/implementing-jwt-authentication-on-spring-boot-api]
